@@ -145,12 +145,12 @@ E enfim os serviços deverão estar em funcionamento..
 
 Para acessar a página da aplicação do WordPress, visite `http://localhost:8080` e será redirecionado para página de configuração inicial do WordPress escolhendo o idioma a ser utilizado
 
-![img1](https://imgur.com/KinAHfz)
+![img1](https://user-images.githubusercontent.com/108817932/195676993-0f8f5e72-3e6d-433f-9947-1877ce8f1135.png)
 
 Logo em seguida, preencha as informações para poder instalar o WordPress..
 
-![img2](https://imgur.com/XR9frJs)
+![img2](https://user-images.githubusercontent.com/108817932/195677188-9e01c83d-a971-43f5-aa77-248ad0949186.png)
 
-e Pronto! Sua aplicação foi instalada com sucesso! Basta logar no site para ter acesso ao dashboard.
+E Pronto! Sua aplicação foi instalada com sucesso! Basta logar no site para ter acesso ao dashboard.
 
-![img3](https://imgur.com/0Gj50E6)
+![img3](https://user-images.githubusercontent.com/108817932/195677288-30af25b5-9c12-43fa-ae07-893e778a91e1.png)
