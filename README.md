@@ -28,7 +28,7 @@ Abra o arquivo de configuração para definir os dados que farão parte da cria�
     volumes:
       - db:/var/lib/mysql
       ```
-    * `mysql_db:` Nome do serviço do MySql.
+    * `mysql_db:` -> Nome do serviço do MySql.
     * `container_name: mysql-container` -> Nome do container que será criado para o MySql.
     * `image: mysql:5.7` -> A imagem que será baixada do repositório do MySql no dockerhub. Neste caso foi escolhida a versão 5.7.
     * `restart: always` -> Para que, em casos de erro na criação do container, o mesmo será reiniciado até que ela seja consertada.
