@@ -1,0 +1,1 @@
+## Subir um servidor Wordpress + MYSQL com o docker compose
