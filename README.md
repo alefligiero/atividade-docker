@@ -18,7 +18,7 @@ Abra o arquivo de configuração para definir os dados que farão parte da cria�
    ```
    mysql_db:
     container_name: mysql-container
-    image: mysql:5.7
+    image: mysql:8.0.31
     restart: always
     environment:
       MYSQL_DATABASE: wordpressdb
@@ -30,7 +30,7 @@ Abra o arquivo de configuração para definir os dados que farão parte da cria�
       ```
     * `mysql_db:` -> Nome do serviço do MySql.
     * `container_name: mysql-container` -> Nome do container que será criado para o MySql.
-    * `image: mysql:5.7` -> A imagem que será baixada do repositório do MySql no dockerhub. Neste caso foi escolhida a versão 5.7.
+    * `image: mysql:8.0.31` -> A imagem que será baixada do repositório do MySql no dockerhub. Neste caso foi escolhida a versão 8.0.31 por ser a última versão estável.
     * `restart: always` -> Para que, em casos de erro na criação do container, o mesmo será reiniciado até que ela seja consertada.
     * `environment:` -> Lista de variáveis de ambiente que são setadas previamente para a criação do container:
       * `MYSQL_DATABASE: wordpressdb` -> Nome da database que será criada.
@@ -44,7 +44,7 @@ Abra o arquivo de configuração para definir os dados que farão parte da cria�
     ```
     wordpress:
       container_name: wordpress-container
-      image: wordpress
+      image: wordpress:6.0.2
       restart: always
       ports:
         - 8080:80
@@ -60,7 +60,7 @@ Abra o arquivo de configuração para definir os dados que farão parte da cria�
     ```
     * `wordpress:` -> Nome do serviço do WordPress.
     * `container_name: wordpress-container` -> Nome do container que será criado para o WordPress
-    * `image: wordpress` -> A imagem que será baixada do repositório do WordPress no dockerhub. Quando não possui nenhuma tag, baixara a última versão disponível.
+    * `image: wordpress:6.0.2` -> A imagem que será baixada do repositório do WordPress no dockerhub. Neste caso foi escolhida a versão 6.0.2 por ser a última versão estável.
     * `restart: always` -> Para que, em casos de erro na criação do container, o mesmo será reiniciado até que ela seja consertada.
     * `ports:` -> Lista de portas de acesso da máquina local para o container criado.
       * `- 8080:80` -> A porta da máquina local será a 8080 e a porta da máquina do container será 80(padrão WordPress).
@@ -101,7 +101,7 @@ services:
 
   mysql_db:
     container_name: mysql-container
-    image: mysql:5.7
+    image: mysql:8.0.31
     restart: always
     environment:
       MYSQL_DATABASE: wordpressdb
@@ -113,7 +113,7 @@ services:
 
   wordpress:
     container_name: wordpress-container
-    image: wordpress
+    image: wordpress:6.0.2
     restart: always
     ports:
       - 8080:80
