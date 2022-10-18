@@ -20,6 +20,8 @@ Abra o arquivo de configuração para definir os dados que farão parte da cria�
     container_name: mysql-container
     image: mysql:8.0.31
     restart: always
+    networks:
+      - wordpress-network
     environment:
       MYSQL_DATABASE: wordpressdb
       MYSQL_USER: wordpress
@@ -32,6 +34,8 @@ Abra o arquivo de configuração para definir os dados que farão parte da cria�
     * `container_name: mysql-container` -> Nome do container que será criado para o MySql.
     * `image: mysql:8.0.31` -> A imagem que será baixada do repositório do MySql no dockerhub. Neste caso foi escolhida a versão 8.0.31 por ser a última versão estável.
     * `restart: always` -> Para que, em casos de erro na criação do container, o mesmo será reiniciado até que ela seja consertada.
+    * `networks:` -> Lista de Redes.
+      * `wordpress-network` -> Nome da rede que será utilizada no container. 
     * `environment:` -> Lista de variáveis de ambiente que são setadas previamente para a criação do container:
       * `MYSQL_DATABASE: wordpressdb` -> Nome da database que será criada.
       * `MYSQL_USER: wordpress` -> Nome do usuário que terá acesso a Database.
@@ -46,6 +50,8 @@ Abra o arquivo de configuração para definir os dados que farão parte da cria�
       container_name: wordpress-container
       image: wordpress:6.0.2
       restart: always
+      networks:
+      - wordpress-network
       ports:
         - 8080:80
       environment:
@@ -62,6 +68,10 @@ Abra o arquivo de configuração para definir os dados que farão parte da cria�
     * `container_name: wordpress-container` -> Nome do container que será criado para o WordPress
     * `image: wordpress:6.0.2` -> A imagem que será baixada do repositório do WordPress no dockerhub. Neste caso foi escolhida a versão 6.0.2 por ser a última versão estável.
     * `restart: always` -> Para que, em casos de erro na criação do container, o mesmo será reiniciado até que ela seja consertada.
+    * `networks:` -> Lista de Redes.
+      * `wordpress-network` -> Nome da rede que será será utilizada no container.
+
+        OBS: Os containers devem estar conectados na mesma rede.
     * `ports:` -> Lista de portas de acesso da máquina local para o container criado.
       * `- 8080:80` -> A porta da máquina local será a 8080 e a porta da máquina do container será 80(padrão WordPress).
     * `environment:` -> Lista de variáveis de ambiente que são setadas previamente para a criação do container:
