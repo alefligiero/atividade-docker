@@ -113,6 +113,8 @@ services:
     container_name: mysql-container
     image: mysql:8.0.31
     restart: always
+    networks:
+      - wordpress-network
     environment:
       MYSQL_DATABASE: wordpressdb
       MYSQL_USER: wordpress
@@ -125,6 +127,8 @@ services:
     container_name: wordpress-container
     image: wordpress:6.0.2
     restart: always
+    networks:
+      - wordpress-network
     ports:
       - 8080:80
     environment:
