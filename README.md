@@ -51,7 +51,7 @@ Abra o arquivo de configuração para definir os dados que farão parte da cria�
       image: wordpress:6.0.2
       restart: always
       networks:
-      - wordpress-network
+        - wordpress-network
       ports:
         - 8080:80
       environment:
@@ -69,9 +69,7 @@ Abra o arquivo de configuração para definir os dados que farão parte da cria�
     * `image: wordpress:6.0.2` -> A imagem que será baixada do repositório do WordPress no dockerhub. Neste caso foi escolhida a versão 6.0.2 por ser a última versão estável.
     * `restart: always` -> Para que, em casos de erro na criação do container, o mesmo será reiniciado até que ela seja consertada.
     * `networks:` -> Lista de Redes.
-      * `wordpress-network` -> Nome da rede que será será utilizada no container.
-
-        OBS: Os containers devem estar conectados na mesma rede.
+      * `wordpress-network` -> Nome da rede que será será utilizada no container. OBS:. Os containers devem estar conectados na mesma rede.
     * `ports:` -> Lista de portas de acesso da máquina local para o container criado.
       * `- 8080:80` -> A porta da máquina local será a 8080 e a porta da máquina do container será 80(padrão WordPress).
     * `environment:` -> Lista de variáveis de ambiente que são setadas previamente para a criação do container:
